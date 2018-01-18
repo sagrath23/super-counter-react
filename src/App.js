@@ -3,7 +3,30 @@ import logo from './logo.svg';
 import './App.css';
 
 class App extends Component {
+
+  constructor(props){
+    super(props);
+
+    this.handleIncrement = this.handleIncrement.bind(this);
+    this.handleDecrement = this.handleDecrement.bind(this);
+
+    this.state = {
+      count: 0
+    };
+
+  }
+
+  handleIncrement() {
+    this.setState({count: this.state.count + 1});
+  }
+
+  handleDecrement() {
+    this.setState({count: this.state.count - 1});
+  }
+
   render() {
+    const {count} = this.state;
+    console.log(count, 'count');
     return (
       <div className="App">
         <header className="App-header">
@@ -11,8 +34,11 @@ class App extends Component {
           <h1 className="App-title">Welcome to React</h1>
         </header>
         <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
+          Clicked {count} times!!!.
         </p>
+        <button onClick={this.handleIncrement}>+</button>
+        <button onClick={this.handleDecrement}>-</button>
+        <button>+ (async)</button>
       </div>
     );
   }
