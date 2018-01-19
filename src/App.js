@@ -11,7 +11,12 @@ class App extends Component {
 
   render() {
     console.log(this.props, 'props');
-    const {incrementAction, decrementAction, count} = this.props;
+    const {
+      incrementAction, 
+      decrementAction, 
+      incrementAsyncAction,
+      decrementAsyncAction, 
+      count } = this.props;
     console.log(count, 'count');
     return (
       <div className="App">
@@ -24,7 +29,8 @@ class App extends Component {
         </p>
         <button onClick={(event) => incrementAction()}>+</button>
         <button onClick={(event) => decrementAction()}>-</button>
-        <button>+ (async)</button>
+        <button onClick={(event) => incrementAsyncAction()}>+ (async)</button>
+        <button onClick={(event) => decrementAsyncAction()}>- (async)</button>
       </div>
     );
   }
