@@ -9,28 +9,9 @@ import './App.css';
 
 class App extends Component {
 
-  constructor(props){
-    super(props);
-
-    this.handleIncrement = this.handleIncrement.bind(this);
-    this.handleDecrement = this.handleDecrement.bind(this);
-
-    this.state = {
-      count: 0
-    };
-
-  }
-
-  handleIncrement() {
-    this.setState({count: this.state.count + 1});
-  }
-
-  handleDecrement() {
-    this.setState({count: this.state.count - 1});
-  }
-
   render() {
-    const {count} = this.state;
+    console.log(this.props, 'props');
+    const {incrementAction, decrementAction, count} = this.props;
     console.log(count, 'count');
     return (
       <div className="App">
@@ -41,8 +22,8 @@ class App extends Component {
         <p className="App-intro">
           Clicked {count} times!!!.
         </p>
-        <button onClick={this.handleIncrement}>+</button>
-        <button onClick={this.handleDecrement}>-</button>
+        <button onClick={(event) => incrementAction()}>+</button>
+        <button onClick={(event) => decrementAction()}>-</button>
         <button>+ (async)</button>
       </div>
     );
