@@ -5,17 +5,15 @@ import { INCREMENT, INCREMENT_ASYNC, DECREMENT, DECREMENT_ASYNC } from "../const
 
 
 export function* counterSaga(){
-    console.log('counterSaga');
+    yield console.log('counterSaga');
 }
 
 export function* incrementAsyncSaga(){
-    console.log('incrementAsync Saga!!!');
     yield delay(3000);
     yield put({type: INCREMENT});
 }
 
 export function* watchIncrementAsync() {
-    console.log('increment watched!!!');
     yield takeEvery(INCREMENT_ASYNC, incrementAsyncSaga);
 }
 
@@ -26,7 +24,6 @@ export function* decrementAsyncSaga(){
 }
 
 export function* watchDecrementAsync() {
-    console.log('decrement watched!!!');
     yield takeEvery(DECREMENT_ASYNC, decrementAsyncSaga);
 }
 
