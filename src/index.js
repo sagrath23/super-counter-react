@@ -9,14 +9,18 @@ import  counterReducer  from './reducers';
 import { Provider } from 'react-redux';
 
 import createSagaMiddleware from 'redux-saga';
-import { counterSaga } from './sagas';
+import counterSaga from './sagas';
 
-const sagaMiddleware = createSagaMiddleware()
-
+const sagaMiddleware = createSagaMiddleware();
+/* redux dev tools
 let store = createStore(
     counterReducer, 
     applyMiddleware(sagaMiddleware),
     window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__());
+*/
+let store = createStore(
+    counterReducer, 
+    applyMiddleware(sagaMiddleware));
 
 sagaMiddleware.run(counterSaga);
 

@@ -1,3 +1,3 @@
-export function counterSaga(){
+export default function* counterSaga(){
     console.log('counterSaga');
 }
