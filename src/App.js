@@ -1,13 +1,13 @@
-import React from 'react';
+import React from 'react'
 
-import PropTypes from 'prop-types';
+import PropTypes from 'prop-types'
 
-import { connect } from 'react-redux';
-import { bindActionCreators } from 'redux';
-import * as actions from './actions';
+import { connect } from 'react-redux'
+import { bindActionCreators } from 'redux'
+import * as actions from './actions'
 
-import logo from './logo.svg';
-import './App.css';
+import logo from './logo.svg'
+import './App.css'
 
 const CounterComponent = ({incrementAction, decrementAction, incrementAsyncAction, decrementAsyncAction, count}) => (
   <div className="App">
@@ -22,7 +22,8 @@ const CounterComponent = ({incrementAction, decrementAction, incrementAsyncActio
     <button onClick={() => decrementAction()}>-</button>
     <button onClick={() => incrementAsyncAction()}>+ (async)</button>
     <button onClick={() => decrementAsyncAction()}>- (async)</button>
-  </div>);
+  </div>
+)
 
 CounterComponent.propTypes = {
   incrementAction: PropTypes.func.isRequired,
@@ -33,11 +34,11 @@ CounterComponent.propTypes = {
 }
 
 const mapStateToProps = (state) => {
-  return {count: state};
+  return {count: state}
 }
 
 const mapDispatchToProps = (dispatch) => {
-  return bindActionCreators(actions, dispatch);
+  return bindActionCreators(actions, dispatch)
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(CounterComponent);
+export default connect(mapStateToProps, mapDispatchToProps)(CounterComponent)
