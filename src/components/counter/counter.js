@@ -2,8 +2,8 @@ import React, { Fragment } from 'react'
 import PropTypes from 'prop-types'
 
 const counterComponent = ({
-  incrementAction,
-  decrementAction,
+  increment,
+  decrement,
   incrementAsyncAction,
   decrementAsyncAction,
   count
@@ -12,23 +12,23 @@ const counterComponent = ({
     <p className="App-intro">
       Clicked {count} times!!!.
     </p>
-    <button onClick={() => incrementAction()}>+</button>
-    <button onClick={() => decrementAction()}>-</button>
+    <button onClick={() => increment()}>+</button>
+    <button onClick={() => decrement()}>-</button>
     <button onClick={() => incrementAsyncAction()}>+ (async)</button>
     <button onClick={() => decrementAsyncAction()}>- (async)</button>
   </Fragment>)
 
 counterComponent.propTypes = {
-  incrementAction: PropTypes.func,
-  decrementAction: PropTypes.func,
+  increment: PropTypes.func,
+  decrement: PropTypes.func,
   incrementAsyncAction: PropTypes.func,
   decrementAsyncAction: PropTypes.func,
   count: PropTypes.number
 }
 
 counterComponent.defaultProps = {
-  incrementAction: () => {},
-  decrementAction: () => {},
+  increment: () => {},
+  decrement: () => {},
   incrementAsyncAction: () => {},
   decrementAsyncAction: () => {},
   count: 0

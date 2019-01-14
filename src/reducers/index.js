@@ -1,14 +1,18 @@
-import { INCREMENT,DECREMENT } from '../constants';
+import { handleActions, combineActions } from 'redux-actions'
+import { increment, decrement } from '../actions'
 
-const counterReducer = (state = 0, action) => {
-    switch(action.type){
-        case INCREMENT:
-            return state + 1;
-        case DECREMENT: 
-            return state - 1;
-        default: 
-            return state;
-    }
-}
+const defaultState = { counter: 0 }
+
+const counterReducer = handleActions(
+    {
+        [combineActions(increment, decrement)]: (
+            state,
+            { payload: { amount } }
+        ) => {
+            return { ...state, counter: state.counter + amount }
+        }
+    },
+    defaultState
+)
 
 export default counterReducer;

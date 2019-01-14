@@ -1,6 +1,7 @@
-import { delay } from 'redux-saga';
-import { put, takeEvery, all } from 'redux-saga/effects';
-import { INCREMENT, INCREMENT_ASYNC, DECREMENT, DECREMENT_ASYNC } from "../constants/index";
+import { delay } from 'redux-saga'
+import { put, takeEvery, all } from 'redux-saga/effects'
+import { increment, decrement } from '../actions'
+import { INCREMENT_ASYNC, DECREMENT_ASYNC } from "../constants/index"
 
 
 
@@ -10,7 +11,7 @@ export function* counterSaga(){
 
 export function* incrementAsyncSaga(){
     yield delay(3000);
-    yield put({type: INCREMENT});
+    yield put(increment(1));
 }
 
 export function* watchIncrementAsync() {
@@ -20,7 +21,7 @@ export function* watchIncrementAsync() {
 export function* decrementAsyncSaga(){
     console.log('decrementAsync Saga!!!');
     yield delay(1000);
-    yield put({type: DECREMENT});
+    yield put(decrement(1));
 }
 
 export function* watchDecrementAsync() {
