@@ -1,20 +1,20 @@
 import { createActions } from 'redux-actions'
-import { INCREMENT_ASYNC, DECREMENT_ASYNC } from '../constants';
 
-const { increment, decrement } = createActions({
-    INCREMENT: (amount = 1) => ({ amount }),
-    DECREMENT: (amount = 1) => ({ amount: -amount })
+const {
+  increment,
+  decrement,
+  incrementAsync,
+  decrementAsync
+} = createActions({
+  INCREMENT: (amount = 1) => ({ amount }),
+  DECREMENT: (amount = 1) => ({ amount: -amount }),
+  INCREMENT_ASYNC: (amount = 1) => ({ amount }),
+  DECREMENT_ASYNC: (amount = 1) => ({ amount })
 });
 
 export {
-    increment,
-    decrement
-}
-
-export const incrementAsyncAction = () => {
-    return { type: INCREMENT_ASYNC };
-}
-
-export const decrementAsyncAction = () => {
-    return { type: DECREMENT_ASYNC };
+  increment,
+  decrement,
+  incrementAsync,
+  decrementAsync
 }

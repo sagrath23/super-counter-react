@@ -4,33 +4,33 @@ import PropTypes from 'prop-types'
 const counterComponent = ({
   increment,
   decrement,
-  incrementAsyncAction,
-  decrementAsyncAction,
+  incrementAsync,
+  decrementAsync,
   count
 }) => (
-  <Fragment>
-    <p className="App-intro">
-      Clicked {count} times!!!.
+    <Fragment>
+      <p className="App-intro">
+        Clicked {count} times!!!.
     </p>
-    <button onClick={() => increment()}>+</button>
-    <button onClick={() => decrement()}>-</button>
-    <button onClick={() => incrementAsyncAction()}>+ (async)</button>
-    <button onClick={() => decrementAsyncAction()}>- (async)</button>
-  </Fragment>)
+      <button onClick={() => increment()}>+</button>
+      <button onClick={() => decrement()}>-</button>
+      <button onClick={() => incrementAsync()}>+ (async)</button>
+      <button onClick={() => decrementAsync()}>- (async)</button>
+    </Fragment>)
 
 counterComponent.propTypes = {
   increment: PropTypes.func,
   decrement: PropTypes.func,
-  incrementAsyncAction: PropTypes.func,
-  decrementAsyncAction: PropTypes.func,
+  incrementAsync: PropTypes.func,
+  decrementAsync: PropTypes.func,
   count: PropTypes.number
 }
 
 counterComponent.defaultProps = {
-  increment: () => {},
-  decrement: () => {},
-  incrementAsyncAction: () => {},
-  decrementAsyncAction: () => {},
+  increment: () => { },
+  decrement: () => { },
+  incrementAsync: () => { },
+  decrementAsync: () => { },
   count: 0
 }
 
