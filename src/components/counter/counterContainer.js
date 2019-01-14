@@ -6,7 +6,7 @@ import counter from './counter'
 const mapStateToProps = (state) => {
   console.log(state, 'da state');
 
-  return {count: state.counter}
+  return { count: state.counter }
 }
 
 const mapDispatchToProps = (dispatch) => {
