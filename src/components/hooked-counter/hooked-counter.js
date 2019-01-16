@@ -1,7 +1,14 @@
-import React, { Fragment, useState } from 'react'
+import React, {
+  Fragment,
+  useState,
+  useEffect
+} from 'react'
 
 function HookedCounter () {
   const [count, setCount] = useState(0)
+  useEffect(() => {
+    document.title = `${count} times clicked !!!`
+  })
 
   return (<Fragment>
     <p className="App-intro">
