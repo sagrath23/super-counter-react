@@ -3,6 +3,7 @@ import React, {
   useState,
   useEffect
 } from 'react'
+import { useDispatch, useMappedState } from 'redux-react-hook'
 
 function HookedCounter () {
   const [count, setCount] = useState(0)
