@@ -8,7 +8,7 @@ import { useDispatch, useMappedState } from 'redux-react-hook'
 function HookedCounter () {
   const [count, setCount] = useState(0)
   useEffect(() => {
-    document.title = `${count} times clicked !!!`
+    document.title = `${count} times clicked !!!!`
   })
 
   return (<Fragment>
