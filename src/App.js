@@ -1,5 +1,4 @@
 import React from 'react'
-import { CounterContainer } from './components/counter'
 import { HookedCounter } from './components/hooked-counter'
 
 import logo from './logo.svg'
@@ -11,7 +10,6 @@ const App = ({incrementAction, decrementAction, incrementAsyncAction, decrementA
       <img src={logo} className="App-logo" alt="logo" />
       <h1 className="App-title">Welcome to Super Counter</h1>
     </header>
-    <CounterContainer />
     <HookedCounter />
   </div>
 )
