@@ -1,3 +1,4 @@
+# Super Counter React
 A small app to learn React and experiment with some libraries.
 
 This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).
