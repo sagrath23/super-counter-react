@@ -1,6 +1,7 @@
-import { delay } from 'redux-saga'
 import { put, takeEvery, all } from 'redux-saga/effects'
 import * as actions from '../actions'
+
+const delay = (ms) => new Promise(res => setTimeout(res, ms))
 
 export function* incrementAsyncSaga({ payload: { amount } }) {
   yield delay(3000);
