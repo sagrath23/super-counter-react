@@ -8,7 +8,7 @@ const App = ({incrementAction, decrementAction, incrementAsyncAction, decrementA
   <div className="App">
     <header className="App-header">
       <img src={logo} className="App-logo" alt="logo" />
-      <h1 className="App-title">Welcome to React Super Counter</h1>
+      <h1 className="App-title">Super Counter</h1>
     </header>
     <HookedCounter />
   </div>
